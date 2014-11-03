@@ -15,4 +15,27 @@ reverseGeo.getShortNameSync(); // returns the short name with locality type
 Note that there are two ways to get the value. One of them it `getShortNameSync()`.
 If you are `getShortNameSync()`, wrap it with `AsyncTask` .
 
+The available types are
+* ROUTE
+* NEIGHBORHOOD
+* SUBLOCALITY
+* LOCALITY
+* COUNTRY
+
+Depends on location, the attributes may vary and not available.
+
 Please see sample for more.
+
+Contributing
+------------
+
+ 1. Fork it
+ 2. Create your feature branch (`git checkout -b my-new-feature`)
+ 3. Commit your changes (`git commit -am 'Added some feature'`)
+ 4. Push to the branch (`git push origin my-new-feature`)
+ 5. Create new Pull Request
+
+License
+--------
+
+MIT
