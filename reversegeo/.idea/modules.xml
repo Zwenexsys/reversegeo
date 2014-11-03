@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/build/intermediates/bundles/debug/debug.iml" filepath="$PROJECT_DIR$/build/intermediates/bundles/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/intermediates/manifests/test/debug/debug.iml" filepath="$PROJECT_DIR$/build/intermediates/manifests/test/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/intermediates/bundles/release/release.iml" filepath="$PROJECT_DIR$/build/intermediates/bundles/release/release.iml" />
+    </modules>
+  </component>
+</project>
