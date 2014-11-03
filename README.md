@@ -1,10 +1,9 @@
-reversegeo
+# reversegeo
 -----------
 
 A simple wrapper to get the location by passing lat/long value to Google Maps Reverse Geocoding.
 
-Usage
-=====
+## Usage
 
 ```java
     ReverseGeo reverseGeo = new ReverseGeo("16.780833,96.149722");
@@ -17,4 +16,4 @@ Usage
 Note that there are two ways to get the value. One of them it `getShortNameSync()`.
 If you are `getShortNameSync()`, wrap it with `AsyncTask` .
 
-See sample for more.
+Please see sample for more.
