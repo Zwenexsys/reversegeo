@@ -25,15 +25,15 @@ public class ReverseGeo {
   private static final String BASE_URL = "http://maps.googleapis.com/maps/api/geocode/";
   private final OkHttpClient client = new OkHttpClient();
   private String shortName;
-  private String lagLng;
+  private String latLng;
   private String type;
 
-  public ReverseGeo(String lagLng) {
-    this.lagLng = lagLng;
+  public ReverseGeo(String latLng) {
+    this.latLng = latLng;
   }
 
   public ReverseGeo(double lat, double lng) {
-    this.lagLng = String.valueOf(lat) + "," + String.valueOf(lng);
+    this.latLng = String.valueOf(lat) + "," + String.valueOf(lng);
   }
 
   public String getType() {
@@ -65,7 +65,7 @@ public class ReverseGeo {
         .build();
 
     MapServiceAsync service = restAdapter.create(MapServiceAsync.class);
-    service.getResult(lagLng, new Callback<Maps>() {
+    service.getResult(latLng, new Callback<Maps>() {
       @Override public void success(Maps maps, Response response) {
         List<AddressComponent> components = maps.getResults().get(0).getAddressComponents();
         for (AddressComponent component : components) {
@@ -99,7 +99,7 @@ public class ReverseGeo {
         .build();
 
     MapServiceSync service = restAdapter.create(MapServiceSync.class);
-    Maps maps = service.getResult(lagLng);
+    Maps maps = service.getResult(latLng);
 
     List<AddressComponent> components = maps.getResults().get(0).getAddressComponents();
     for (AddressComponent component : components) {
