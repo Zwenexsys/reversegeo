@@ -12,8 +12,8 @@ reverseGeo.getShortNameAsync(); // returns the short name with locality type
 reverseGeo.getShortNameSync(); // returns the short name with locality type
 ```
 
-Note that there are two ways to get the value. One of them it `getShortNameSync()`.
-If you are `getShortNameSync()`, wrap it with `AsyncTask` .
+Note that there are two ways to get the value. One of them is `getShortNameSync()`.
+If you use `getShortNameSync()`, wrap it with `AsyncTask` .
 
 The available types are
 * ROUTE
@@ -22,7 +22,7 @@ The available types are
 * LOCALITY
 * COUNTRY
 
-Depends on location, the attributes may vary and not available.
+Depends on location, the attributes may vary and not be available.
 
 Please see sample for more.
 
