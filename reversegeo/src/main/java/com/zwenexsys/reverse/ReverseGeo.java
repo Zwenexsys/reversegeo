@@ -28,14 +28,29 @@ public class ReverseGeo {
   private String latLng;
   private String type;
 
+  /**
+   * Accept the already concatenated string as param
+   * @param latLng the concatenated lat/lng string
+   */
   public ReverseGeo(String latLng) {
     this.latLng = latLng;
   }
 
+  /**
+   * Accept two double latitude and longitude as param
+   *
+   * @param lat - latitude
+   * @param lng - longitude
+   */
   public ReverseGeo(double lat, double lng) {
     this.latLng = String.valueOf(lat) + "," + String.valueOf(lng);
   }
 
+  /**
+   * Return the type of location
+   *
+   * @return type of location
+   */
   public String getType() {
     return this.type;
   }
