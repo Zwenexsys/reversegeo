@@ -32,6 +32,10 @@ public class ReverseGeo {
     this.lagLng = lagLng;
   }
 
+  public ReverseGeo(double lat, double lng) {
+    this.lagLng = String.valueOf(lat) + "," + String.valueOf(lng);
+  }
+
   public String getType() {
     return this.type;
   }
