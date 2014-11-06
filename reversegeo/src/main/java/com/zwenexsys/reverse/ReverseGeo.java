@@ -76,7 +76,7 @@ public class ReverseGeo {
     }
   }
 
-  public String getShortNameAsync() {
+  public String getAsyncShortName() {
     BaseService.buildMapsAsync().getResult(latLng, new Callback<Maps>() {
       @Override public void success(Maps maps, Response response) {
         List<AddressComponent> components = maps.getResults().get(0).getAddressComponents();
@@ -104,7 +104,7 @@ public class ReverseGeo {
     return shortName;
   }
 
-  public String getShortNameSync() {
+  public String getSyncShortName() {
     Maps maps = BaseService.buildMapsSync().getResult(latLng);
 
     List<AddressComponent> components = maps.getResults().get(0).getAddressComponents();

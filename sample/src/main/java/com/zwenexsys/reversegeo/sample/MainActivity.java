@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
   private class GetLocation extends AsyncTask<Void, Void, String> {
 
     @Override protected String doInBackground(Void... voids) {
-      String st = reverseGeo.getShortNameSync();
+      String st = reverseGeo.getSyncShortName();
       Log.d("short name", "sn : " + st);
       return st;
     }

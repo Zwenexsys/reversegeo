@@ -7,6 +7,6 @@ import retrofit.http.Query;
 /**
  * Created by Ye Lin Aung on 14/11/02.
  */
-public interface MapServiceSync {
+public interface SyncMapService {
   @GET("/json") Maps getResult(@Query("latlng") String latLng);
 }

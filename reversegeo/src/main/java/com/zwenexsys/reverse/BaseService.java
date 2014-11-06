@@ -14,18 +14,18 @@ public class BaseService {
   public BaseService() {
   }
 
-  public static MapServiceAsync buildMapsAsync() {
+  public static AsyncMapService buildMapsAsync() {
     return new retrofit.RestAdapter.Builder().setEndpoint(BASE_URL)
         .setClient(new OkClient(okHttpClient))
         .setLogLevel(retrofit.RestAdapter.LogLevel.BASIC)
         .build()
-        .create(MapServiceAsync.class);
+        .create(AsyncMapService.class);
   }
 
-  public static MapServiceSync buildMapsSync() {
+  public static SyncMapService buildMapsSync() {
     return new retrofit.RestAdapter.Builder().setEndpoint(BASE_URL)
         .setClient(new OkClient(okHttpClient))
         .build()
-        .create(MapServiceSync.class);
+        .create(SyncMapService.class);
   }
 }
