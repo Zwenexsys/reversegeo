@@ -5,9 +5,7 @@ import com.zwenexsys.reverse.models.AddressComponent;
 import com.zwenexsys.reverse.models.Maps;
 import java.util.List;
 import retrofit.Callback;
-import retrofit.RestAdapter;
 import retrofit.RetrofitError;
-import retrofit.client.OkClient;
 import retrofit.client.Response;
 
 /**
@@ -22,7 +20,6 @@ public class ReverseGeo {
   public static final String LOCALITY = "locality";
   public static final String COUNTRY = "country";
 
-  private static final String BASE_URL = "http://maps.googleapis.com/maps/api/geocode/";
   private final OkHttpClient client = new OkHttpClient();
   private String shortName;
   private String latLng;
@@ -30,6 +27,7 @@ public class ReverseGeo {
 
   /**
    * Accept the already concatenated string as param
+   *
    * @param latLng the concatenated lat/lng string
    */
   public ReverseGeo(String latLng) {
@@ -55,6 +53,11 @@ public class ReverseGeo {
     return this.type;
   }
 
+  /**
+   * Set type of location
+   *
+   * @param type - type of location
+   */
   public void setType(String type) {
     if (type == null) {
       throw new NullPointerException("Type may not be null.");
@@ -74,13 +77,7 @@ public class ReverseGeo {
   }
 
   public String getShortNameAsync() {
-    RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint(BASE_URL)
-        .setClient(new OkClient(client))
-        .setLogLevel(RestAdapter.LogLevel.BASIC)
-        .build();
-
-    MapServiceAsync service = restAdapter.create(MapServiceAsync.class);
-    service.getResult(latLng, new Callback<Maps>() {
+    BaseService.buildMapsAsync().getResult(latLng, new Callback<Maps>() {
       @Override public void success(Maps maps, Response response) {
         List<AddressComponent> components = maps.getResults().get(0).getAddressComponents();
         for (AddressComponent component : components) {
@@ -108,13 +105,7 @@ public class ReverseGeo {
   }
 
   public String getShortNameSync() {
-    RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint(BASE_URL)
-        .setClient(new OkClient(client))
-        .setLogLevel(RestAdapter.LogLevel.BASIC)
-        .build();
-
-    MapServiceSync service = restAdapter.create(MapServiceSync.class);
-    Maps maps = service.getResult(latLng);
+    Maps maps = BaseService.buildMapsSync().getResult(latLng);
 
     List<AddressComponent> components = maps.getResults().get(0).getAddressComponents();
     for (AddressComponent component : components) {
