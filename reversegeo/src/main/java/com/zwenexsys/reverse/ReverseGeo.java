@@ -1,6 +1,5 @@
 package com.zwenexsys.reverse;
 
-import com.squareup.okhttp.OkHttpClient;
 import com.zwenexsys.reverse.models.AddressComponent;
 import com.zwenexsys.reverse.models.Maps;
 import java.util.List;
@@ -20,7 +19,6 @@ public class ReverseGeo {
   public static final String LOCALITY = "locality";
   public static final String COUNTRY = "country";
 
-  private final OkHttpClient client = new OkHttpClient();
   private String shortName;
   private String latLng;
   private String type;
