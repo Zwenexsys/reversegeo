@@ -1,5 +1,7 @@
 # reversegeo
 
+*Warning* You should use [GeoCoder](http://developer.android.com/reference/android/location/Geocoder.html) class from Android SDK instead of this.
+
 A simple wrapper to get the location by passing lat/long value to Google Maps Reverse Geocoding.
 
 ## Usage
